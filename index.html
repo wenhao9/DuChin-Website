@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuChin | Bridging Chinese Entrepreneurs & Dutch Business</title>
+    <meta name="description" content="Buy in bulk with 300+ Chinese entrepreneurs. Free expert consultation for the Dutch market.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmenager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script src="script.js"></script>
+    <!-- Favicon (replace with your logo) -->
+    <link rel="icon" href="logo.png">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/31612345678?text=Hello%20DuChin!" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Language Toggle -->
+    <div class="bg-blue-800 text-white py-2 px-4 flex justify-end space-x-4">
+        <button onclick="changeLanguage('en')" class="lang-btn hover:underline">EN</button>
+        <button onclick="changeLanguage('nl')" class="lang-btn hover:underline">NL</button>
+        <button onclick="changeLanguage('zh')" class="lang-btn hover:underline">中文</button>
+    </div>
+
+    <!-- Header with Logo -->
+    <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-16 px-6 text-center">
+        <div class="flex justify-center mb-6">
+            <img src="logo.png" alt="DuChin Logo" class="h-28">
+        </div>
+        <h1 id="hero-title" class="text-4xl md:text-5xl font-bold mb-4">Bulk Purchasing Power for Chinese Entrepreneurs</h1>
+        <p id="hero-subtitle" class="text-xl mb-8 max-w-2xl mx-auto">Join 300+ snackbar owners to get the best prices in the Netherlands.</p>
+        <a href="#contact" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Free Consultation</a>
+    </header>
+
+    <!-- Services -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <h2 id="services-title" class="text-3xl font-bold text-center mb-12">How We Help You</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                <h3 id="service1-title" class="text-xl font-bold mb-3">Bulk Purchasing Power</h3>
+                <p id="service1-desc">Buy in with 300+ Chinese entrepreneurs in snackbars and secure wholesale prices.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                <h3 id="service2-title" class="text-xl font-bold mb-3">Free Expert Consultation</h3>
+                <p id="service2-desc">10+ years of experience helping Chinese businesses thrive in the Netherlands.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-6 bg-blue-50">
+        <h2 id="testimonials-title" class="text-3xl font-bold text-center mb-12">Trusted by Entrepreneurs</h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <p class="mb-4 italic">"DuChin saved us 30% on supplies through their bulk network!"</p>
+                <p class="font-bold">— Zhang Wei, Amsterdam Snackbar</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <p class="mb-4 italic">"Their advice made Dutch bureaucracy easy to navigate."</p>
+                <p class="font-bold">— Li Na, Rotterdam</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 px-6 text-center">
+        <h2 id="cta-title" class="text-3xl font-bold mb-6">Get Your Free Consultation</h2>
+        <p id="cta-subtitle" class="mb-8 max-w-2xl mx-auto">Contact us today to join our network.</p>
+        <form action="https://formsubmit.co/du.chin@hotmail.com" method="POST" class="max-w-md mx-auto">
+            <input type="hidden" name="_subject" value="New DuChin Inquiry">
+            <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 mb-3 rounded-lg border border-blue-300" required>
+            <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded-lg font-bold w-full hover:bg-blue-800">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p id="footer-text">© 2024 DuChin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Logo Placeholder (Bridge + Text) -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" class="hidden">
+        <!-- Replace this with your actual logo file -->
+    </svg>
+
+    <script src="script.js"></script>
+</body>
+</html>
