@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Order | DuChin</title>
+    <meta name="description" content="Thank you for ordering from DuChin - Your bulk purchasing partner">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png">
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/31612345678?text=Hello%20DuChin!" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Language Toggle -->
+    <div class="bg-blue-800 text-white py-2 px-4 flex justify-end space-x-4">
+        <button onclick="changeLanguage('en')" class="lang-btn hover:underline">EN</button>
+        <button onclick="changeLanguage('nl')" class="lang-btn hover:underline">NL</button>
+        <button onclick="changeLanguage('zh')" class="lang-btn hover:underline">中文</button>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-white shadow-md py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="DuChin Logo" class="h-12">
+            </a>
+            <a href="index.html" class="text-blue-600 hover:underline">Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Thank You Content -->
+    <main class="max-w-4xl mx-auto py-16 px-6 text-center">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <!-- Checkmark icon -->
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            
+            <h1 class="text-3xl font-bold mb-4" data-lang="en">Thank You for Your Order!</h1>
+            <h1 class="text-3xl font-bold mb-4" data-lang="nl">Bedankt voor uw bestelling!</h1>
+            <h1 class="text-3xl font-bold mb-4" data-lang="zh">感谢您的订单！</h1>
+            
+            <p class="text-lg mb-6" data-lang="en">Your order has been received and is being processed. We'll send you a confirmation email shortly.</p>
+            <p class="text-lg mb-6" data-lang="nl">Uw bestelling is ontvangen en wordt verwerkt. U ontvangt binnenkort een bevestigingsmail.</p>
+            <p class="text-lg mb-6" data-lang="zh">我们已收到您的订单并正在处理。我们将很快发送确认邮件。</p>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-8 text-left">
+                <h3 class="font-bold mb-2" data-lang="en">What's Next?</h3>
+                <h3 class="font-bold mb-2" data-lang="nl">Wat gebeurt er nu?</h3>
+                <h3 class="font-bold mb-2" data-lang="zh">接下来会怎样？</h3>
+                
+                <ul class="list-disc pl-5 space-y-2">
+                    <li data-lang="en">Order confirmation email within 1 hour</li>
+                    <li data-lang="nl">Bestelbevestiging binnen 1 uur</li>
+                    <li data-lang="zh">1小时内发送订单确认邮件</li>
+                    
+                    <li data-lang="en">Delivery in 2-3 business days</li>
+                    <li data-lang="nl">Levering binnen 2-3 werkdagen</li>
+                    <li data-lang="zh">2-3个工作日内发货</li>
+                    
+                    <li data-lang="en">Contact us if you have questions</li>
+                    <li data-lang="nl">Neem contact op bij vragen</li>
+                    <li data-lang="zh">如有疑问请联系我们</li>
+                </ul>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition" data-lang="en">Back to Home</a>
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition" data-lang="nl">Terug naar Home</a>
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition" data-lang="zh">返回首页</a>
+                
+                <a href="https://wa.me/31612345678" class="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                    <span data-lang="en">Chat with Us</span>
+                    <span data-lang="nl">Chat met ons</span>
+                    <span data-lang="zh">与我们聊天</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p>© 2024 DuChin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Basic language toggle functionality
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.style.display = 'block';
+            });
+        }
+        
+        // Initialize with English
+        let currentLanguage = 'en';
+        changeLanguage('en');
+    </script>
+</body>
+</html>
