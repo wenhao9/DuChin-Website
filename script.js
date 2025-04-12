@@ -55,3 +55,24 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'GA_MEASUREMENT_ID'); // Replace with your GA ID
+
+// SubmitForm
+function processOrder() {
+    // Validate form (keep your existing validation)
+    
+    // Get cart summary
+    let cartSummary = "=== ORDER DETAILS ===\n";
+    cart.forEach(item => {
+        cartSummary += `${item.quantity} × ${item.name} - €${item.price.toFixed(2)}\n`;
+    });
+    
+    // Add cart data to form
+    document.getElementById('order-form').innerHTML += `
+        <input type="hidden" name="cart" value="${encodeURIComponent(cartSummary)}">
+        <input type="hidden" name="subtotal" value="${document.getElementById('subtotal').textContent}">
+        <input type="hidden" name="total" value="${document.getElementById('total').textContent}">
+    `;
+    
+    // Submit the form
+    document.getElementById('order-form').submit();
+}
