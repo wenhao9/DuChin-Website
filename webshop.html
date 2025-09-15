@@ -218,13 +218,17 @@
         <input type="hidden" id="order-vat" name="order_vat">
         <input type="hidden" id="order-delivery" name="order_delivery">
         <input type="hidden" id="order-total" name="order_total">
-        <input type="hidden" name="_format" value="text">
         
         <div class="flex justify-between">
             <button type="button" onclick="hideCustomerForm()" 
                     class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Terug naar Winkelwagen</button>
             <button type="submit" onclick="prepareFormSubmit()" 
                     class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700">Bestelling Voltooien</button>
+            <button type="button" onclick="downloadCSV()" 
+        class="mt-4 w-full bg-gray-600 text-white py-2 rounded-lg font-bold hover:bg-gray-700">
+    CSV Bestand Downloaden
+</button>
+            
         </div>
     </form>
 </div>
@@ -356,13 +360,13 @@
             document.getElementById('customer-form').style.display = 'none';
         }
         function prepareFormSubmit() {
-    // Prepare cart data for submission - CSV format (only SKU and Quantity)
-    let cartData = "SKU,Quantity\n";
+    // Prepare CSV data for email
+    let csvData = "SKU,Quantity\n";
     cart.forEach(item => {
-        cartData += `${item.sku},${item.quantity}\n`;
+        csvData += `${item.sku},${item.quantity}\n`;
     });
     
-    // Also include readable format for email body
+    // Prepare readable format for email body
     let readableCartData = "=== ORDER DETAILS ===\n";
     cart.forEach(item => {
         readableCartData += `${item.quantity} × ${item.name} (${item.sku})\n`;
@@ -375,14 +379,13 @@
     const delivery = deliveryText.includes('GRATIS') ? 'FREE' : deliveryText.replace('€', '');
     const total = document.getElementById('total').textContent.replace('€', '');
     
-    // Combine all data into one field for email
-    const fullOrderData = readableCartData + "\n\n" + 
+    // Combine all data
+    const fullOrderData = "BESTELGEGEVENS:\n" + readableCartData + "\n" +
                          "Subtotaal: €" + subtotal + "\n" +
                          "BTW: €" + vat + "\n" +
                          "Bezorging: " + delivery + "\n" +
                          "TOTAAL: €" + total + "\n\n" +
-                         "=== CSV DATA ===\n" +
-                         cartData;
+                         "CSV DATA:\n" + csvData;
     
     // Set hidden field values
     document.getElementById('cart-data').value = fullOrderData;
@@ -391,7 +394,6 @@
     document.getElementById('order-delivery').value = delivery;
     document.getElementById('order-total').value = total;
     
-    // Form will submit normally via FormSubmit
     return true;
 }
 function toggleReturningCustomer() {
@@ -427,9 +429,33 @@ function toggleReturningCustomer() {
         document.getElementById('returning-email').required = false;
     }
 }        
+        function downloadCSV() {
+    if (cart.length === 0) {
+        alert('Uw winkelwagen is leeg. Voeg eerst producten toe.');
+        return;
+    }
+    
+    // Prepare CSV data
+    let csvData = "SKU,Quantity\n";
+    cart.forEach(item => {
+        csvData += `${item.sku},${item.quantity}\n`;
+    });
+    
+    // Create download link
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('hidden', '');
+    a.setAttribute('href', url);
+    a.setAttribute('download', 'bestelling.csv');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
     </script>
 </body>
 </html>
+
 
 
 
