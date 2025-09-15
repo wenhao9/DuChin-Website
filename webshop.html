@@ -27,17 +27,6 @@
             padding: 8px 12px;
             margin-bottom: 16px;
         }
-        .returning-customer-toggle {
-            color: #3b82f6;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-        .customer-type-section {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background-color: #f8fafc;
-            border-radius: 0.5rem;
-        }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -160,18 +149,6 @@
         <div id="customer-form" class="bg-white p-6 rounded-lg shadow-md mt-8">
             <h2 class="text-2xl font-bold mb-6">Klantgegevens</h2>
             
-            <div class="customer-type-section mb-6">
-                <h3 class="font-semibold mb-3">Bent u een nieuwe of bestaande klant?</h3>
-                <div class="flex space-x-4">
-                    <button id="new-customer-btn" class="px-4 py-2 bg-blue-600 text-white rounded-lg" onclick="setCustomerType('new')">
-                        Nieuwe Klant
-                    </button>
-                    <button id="returning-customer-btn" class="px-4 py-2 bg-gray-200 rounded-lg" onclick="setCustomerType('returning')">
-                        Bestaande Klant
-                    </button>
-                </div>
-            </div>
-            
             <form id="order-form" action="https://formsubmit.co/du.chin@hotmail.com" method="POST">
                 <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="New DuChin Order">
@@ -180,54 +157,30 @@
                 <input type="hidden" name="_next" value="https://wenhao9.github.io/DuChin-Website/thank-you.html">
                 <input type="hidden" name="_captcha" value="false">
                 
-                <!-- Returning Customer Section -->
-                <div id="returning-customer-section" class="hidden">
-                    <div class="bg-blue-50 p-4 rounded-lg mb-6">
-                        <p class="text-blue-700 mb-3">Voer uw klantnummer en bedrijfsnaam in voor een snelle bestelling.</p>
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label for="customer-number" class="block mb-2 font-medium">Klantnummer*</label>
-                                <input type="text" id="customer-number" name="customer_number" class="w-full px-4 py-2 border rounded-lg">
-                            </div>
-                            <div>
-                                <label for="returning-company" class="block mb-2 font-medium">Bedrijfsnaam*</label>
-                                <input type="text" id="returning-company" name="returning_company" class="w-full px-4 py-2 border rounded-lg">
-                            </div>
-                        </div>
-                        <button type="button" onclick="verifyCustomer()" class="bg-blue-600 text-white px-4 py-2 rounded-lg">
-                            Verifieer Klantgegevens
-                        </button>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="name" class="block mb-2 font-medium">Volledige Naam*</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 font-medium">E-mail*</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg">
                     </div>
                 </div>
-                
-                <!-- New Customer Section -->
-                <div id="new-customer-section">
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label for="name" class="block mb-2 font-medium">Volledige Naam*</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg">
-                        </div>
-                        <div>
-                            <label for="email" class="block mb-2 font-medium">E-mail*</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg">
-                        </div>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="phone" class="block mb-2 font-medium">Telefoonnummer*</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
                     </div>
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label for="phone" class="block mb-2 font-medium">Telefoonnummer*</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border rounded-lg">
-                        </div>
-                        <div>
-                            <label for="company" class="block mb-2 font-medium">Bedrijfsnaam</label>
-                            <input type="text" id="company" name="company" class="w-full px-4 py-2 border rounded-lg">
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label for="address" class="block mb-2 font-medium">Bezorgadres*</label>
-                        <textarea id="address" name="address" rows="3" class="w-full px-4 py-2 border rounded-lg"></textarea>
+                    <div>
+                        <label for="company" class="block mb-2 font-medium">Bedrijfsnaam</label>
+                        <input type="text" id="company" name="company" class="w-full px-4 py-2 border rounded-lg">
                     </div>
                 </div>
-                
+                <div class="mb-4">
+                    <label for="address" class="block mb-2 font-medium">Bezorgadres*</label>
+                    <textarea id="address" name="address" rows="3" required class="w-full px-4 py-2 border rounded-lg"></textarea>
+                </div>
                 <div class="mb-4">
                     <label for="notes" class="block mb-2 font-medium">Opmerkingen</label>
                     <textarea id="notes" name="notes" rows="2" class="w-full px-4 py-2 border rounded-lg"></textarea>
@@ -255,76 +208,151 @@
         const DELIVERY_COST = 12.95;
         const VAT_RATE = 0.21;
         const FREE_DELIVERY_THRESHOLD = 350;
-        let customerType = 'new'; // 'new' or 'returning'
         
-        // Set customer type and update UI accordingly
-        function setCustomerType(type) {
-            customerType = type;
-            
-            // Update button styles
-            if (type === 'new') {
-                document.getElementById('new-customer-btn').classList.add('bg-blue-600', 'text-white');
-                document.getElementById('new-customer-btn').classList.remove('bg-gray-200');
-                document.getElementById('returning-customer-btn').classList.add('bg-gray-200');
-                document.getElementById('returning-customer-btn').classList.remove('bg-blue-600', 'text-white');
-                
-                // Show new customer form, hide returning customer form
-                document.getElementById('new-customer-section').classList.remove('hidden');
-                document.getElementById('returning-customer-section').classList.add('hidden');
-                
-                // Make new customer fields required
-                document.getElementById('name').setAttribute('required', 'true');
-                document.getElementById('email').setAttribute('required', 'true');
-                document.getElementById('phone').setAttribute('required', 'true');
-                document.getElementById('address').setAttribute('required', 'true');
-                
-                // Make returning customer fields not required
-                document.getElementById('customer-number').removeAttribute('required');
-                document.getElementById('returning-company').removeAttribute('required');
-                
-            } else {
-                document.getElementById('returning-customer-btn').classList.add('bg-blue-600', 'text-white');
-                document.getElementById('returning-customer-btn').classList.remove('bg-gray-200');
-                document.getElementById('new-customer-btn').classList.add('bg-gray-200');
-                document.getElementById('new-customer-btn').classList.remove('bg-blue-600', 'text-white');
-                
-                // Show returning customer form, hide new customer form
-                document.getElementById('returning-customer-section').classList.remove('hidden');
-                document.getElementById('new-customer-section').classList.add('hidden');
-                
-                // Make returning customer fields required
-                document.getElementById('customer-number').setAttribute('required', 'true');
-                document.getElementById('returning-company').setAttribute('required', 'true');
-                
-                // Make new customer fields not required
-                document.getElementById('name').removeAttribute('required');
-                document.getElementById('email').removeAttribute('required');
-                document.getElementById('phone').removeAttribute('required');
-                document.getElementById('address').removeAttribute('required');
-            }
+        function updateQuantity(productId, change) {
+            const input = document.getElementById(`${productId}-qty`);
+            let newValue = parseInt(input.value) + change;
+            if (newValue < 1) newValue = 1;
+            input.value = newValue;
         }
         
-        // Verify customer information (simulated)
-        function verifyCustomer() {
-            const customerNumber = document.getElementById('customer-number').value;
-            const companyName = document.getElementById('returning-company').value;
+        function addToCart(name, price, quantityId) {
+            const quantity = parseInt(document.getElementById(quantityId).value);
+            const existingItem = cart.find(item => item.name === name);
             
-            if (!customerNumber || !companyName) {
-                alert('Vul zowel uw klantnummer als bedrijfsnaam in.');
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: quantity
+                });
+            }
+            
+            updateCartDisplay();
+            document.getElementById(quantityId).value = 1;
+        }
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+        
+        function updateCartDisplay() {
+            const cartItemsElement = document.getElementById('cart-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const vatElement = document.getElementById('vat');
+            const deliveryElement = document.getElementById('delivery');
+            const totalElement = document.getElementById('total');
+            const deliveryProgress = document.getElementById('delivery-progress');
+            const progressAmount = document.getElementById('progress-amount');
+            const progressBar = document.getElementById('progress-bar');
+            
+            if (cart.length === 0) {
+                cartItemsElement.innerHTML = `<p class="text-gray-500 text-center py-8">Uw winkelwagen is leeg</p>`;
+                subtotalElement.textContent = '€0.00';
+                vatElement.textContent = '€0.00';
+                deliveryElement.textContent = '€0.00';
+                totalElement.textContent = '€0.00';
+                deliveryProgress.classList.add('hidden');
                 return;
             }
             
-            // In a real implementation, you would verify against a database
-            // For this example, we'll simulate a successful verification
-            alert('Klantgegevens geverifieerd! U kunt nu uw bestelling voltooien.');
+            let html = '';
+            let subtotal = 0;
             
-            // Pre-fill the form with customer data (simulated)
-            // In a real implementation, you would fetch this from your database
-            document.getElementById('name').value = "Voorbeeld Klant";
-            document.getElementById('email').value = "voorbeeld@bedrijf.nl";
-            document.getElementById('phone').value = "0612345678";
-            document.getElementById('company').value = companyName;
-            document.getElementById('address').value = "Voorbeeldstraat 123, 1234 AB Rotterdam";
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                html += `
+                    <div class="cart-item flex justify-between items-center py-4 border-b">
+                        <div>
+                            <h4 class="font-bold">${item.name}</h4>
+                            <p>${item.quantity} × €${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="font-bold mr-4">€${itemTotal.toFixed(2)}</span>
+                            <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700">
+                                ×
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsElement.innerHTML = html;
+            
+            // Calculate VAT
+            const vat = subtotal * VAT_RATE;
+            
+            // Calculate delivery (free if subtotal >= 350)
+            const delivery = subtotal >= FREE_DELIVERY_THRESHOLD ? 0 : DELIVERY_COST;
+            
+            // Calculate total
+            const total = subtotal + vat + delivery;
+            
+            // Update summary
+            subtotalElement.textContent = `€${subtotal.toFixed(2)}`;
+            vatElement.textContent = `€${vat.toFixed(2)}`;
+            
+            if (subtotal >= FREE_DELIVERY_THRESHOLD) {
+                deliveryElement.innerHTML = '<span class="text-green-600">GRATIS</span>';
+                deliveryProgress.classList.add('hidden');
+            } else {
+                deliveryElement.textContent = `€${delivery.toFixed(2)}`;
+                deliveryProgress.classList.remove('hidden');
+                
+                // Update progress bar
+                const progressPercent = Math.min((subtotal / FREE_DELIVERY_THRESHOLD) * 100, 100);
+                progressBar.style.width = `${progressPercent}%`;
+                progressAmount.textContent = `€${subtotal.toFixed(2)}/€${FREE_DELIVERY_THRESHOLD}`;
+            }
+            
+            totalElement.textContent = `€${total.toFixed(2)}`;
         }
         
-        function updateQuantity(productId, change)
+        function showCustomerForm() {
+            if (cart.length === 0) {
+                alert('Uw winkelwagen is leeg. Voeg eerst producten toe.');
+                return;
+            }
+            document.getElementById('customer-form').style.display = 'block';
+            window.scrollTo({
+                top: document.getElementById('customer-form').offsetTop,
+                behavior: 'smooth'
+            });
+        }
+        
+        function hideCustomerForm() {
+            document.getElementById('customer-form').style.display = 'none';
+        }
+        
+        function prepareFormSubmit() {
+            // Prepare cart data for submission
+            let cartData = "=== ORDER DETAILS ===\n";
+            cart.forEach(item => {
+                cartData += `${item.quantity} × ${item.name} - €${item.price.toFixed(2)}\n`;
+            });
+            
+            // Get order summary values
+            const subtotal = document.getElementById('subtotal').textContent.replace('€', '');
+            const vat = document.getElementById('vat').textContent.replace('€', '');
+            const deliveryText = document.getElementById('delivery').textContent;
+            const delivery = deliveryText.includes('GRATIS') ? 'FREE' : deliveryText;
+            const total = document.getElementById('total').textContent.replace('€', '');
+            
+            // Set hidden field values
+            document.getElementById('cart-data').value = cartData;
+            document.getElementById('order-subtotal').value = subtotal;
+            document.getElementById('order-vat').value = vat;
+            document.getElementById('order-delivery').value = delivery;
+            document.getElementById('order-total').value = total;
+            
+            // Form will submit normally via FormSubmit
+            return true;
+        }
+    </script>
+</body>
+</html>
