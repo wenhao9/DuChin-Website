@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuChin Webshop - Bulk Purchasing for Entrepreneurs</title>
+    <title>DuChin Webshop - Groothandel voor Ondernemers</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -21,12 +21,6 @@
         #customer-form {
             display: none;
         }
-        [data-lang] {
-            display: none;
-        }
-        [data-lang="en"] {
-            display: block;
-        }
         .free-delivery-banner {
             background-color: #f0fdf4;
             border-left: 4px solid #10b981;
@@ -36,36 +30,23 @@
     </style>
 </head>
 <body class="font-sans bg-gray-50">
-    <!-- Language Toggle -->
-    <div class="bg-blue-800 text-white py-2 px-4 flex justify-end space-x-4">
-        <button onclick="changeLanguage('en')" class="lang-btn hover:underline">EN</button>
-        <button onclick="changeLanguage('nl')" class="lang-btn hover:underline">NL</button>
-        <button onclick="changeLanguage('zh')" class="lang-btn hover:underline">中文</button>
-    </div>
-
     <!-- Navigation -->
     <nav class="bg-white shadow-md py-4 px-6">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="index.html">
                 <span class="text-xl font-bold text-blue-700">DuChin</span>
             </a>
-            <a href="index.html" class="text-blue-600 hover:underline" data-lang="en">← Back to Main Site</a>
-            <a href="index.html" class="text-blue-600 hover:underline" data-lang="nl">← Terug naar Hoofdsite</a>
-            <a href="index.html" class="text-blue-600 hover:underline" data-lang="zh">← 返回主网站</a>
+            <a href="index.html" class="text-blue-600 hover:underline">← Terug naar Hoofdsite</a>
         </div>
     </nav>
 
     <!-- Webshop Content -->
     <main class="max-w-6xl mx-auto py-12 px-4">
-        <h1 class="text-3xl font-bold text-center mb-8" data-lang="en">DuChin Bulk Webshop</h1>
-        <h1 class="text-3xl font-bold text-center mb-8" data-lang="nl">DuChin Groothandel Webshop</h1>
-        <h1 class="text-3xl font-bold text-center mb-8" data-lang="zh">DuChin 批发网店</h1>
+        <h1 class="text-3xl font-bold text-center mb-8">DuChin Groothandel Webshop</h1>
         
         <!-- Free Delivery Banner -->
         <div class="free-delivery-banner rounded-lg mb-8">
-            <p class="text-green-700 font-medium" data-lang="en">✓ Free delivery on orders over €350</p>
-            <p class="text-green-700 font-medium" data-lang="nl">✓ Gratis bezorging bij bestellingen boven €350</p>
-            <p class="text-green-700 font-medium" data-lang="zh">✓ 订单满350欧元免运费</p>
+            <p class="text-green-700 font-medium">✓ Gratis bezorging bij bestellingen boven €350</p>
         </div>
         
         <!-- Product Grid -->
@@ -74,9 +55,7 @@
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <img src="images/a16 kraft.png" alt="A16 Kraft" class="product-image mb-4">
                 <h3 class="text-xl font-bold">A16 Kraft</h3>
-                <p class="text-gray-600 mb-2" data-lang="en">400 pieces</p>
-                <p class="text-gray-600 mb-2" data-lang="nl">400 stuks</p>
-                <p class="text-gray-600 mb-2" data-lang="zh">400 件</p>
+                <p class="text-gray-600 mb-2">400 stuks</p>
                 <p class="text-blue-700 font-bold mb-4">€12.00</p>
                 
                 <div class="flex items-center mb-4">
@@ -86,25 +65,14 @@
                 </div>
                 
                 <button onclick="addToCart('A16 Kraft', 12.00, 'product1-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="en">Add to Cart</button>
-                <button onclick="addToCart('A16 Kraft', 12.00, 'product1-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="nl">In Winkelwagen</button>
-                <button onclick="addToCart('A16 Kraft', 12.00, 'product1-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="zh">加入购物车</button>
+                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
             </div>
             
             <!-- PRODUCT 2 -->
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <img src="images/draagtas middel.png" alt="Draagtas middelgroot" class="product-image mb-4">
-                <h3 class="text-xl font-bold" data-lang="en">Medium Carrier Bag</h3>
-                <h3 class="text-xl font-bold" data-lang="nl">Draagtas Middel</h3>
-                <h3 class="text-xl font-bold" data-lang="zh">中型手提袋</h3>
-                <p class="text-gray-600 mb-2" data-lang="en">250 pieces</p>
-                <p class="text-gray-600 mb-2" data-lang="nl">250 stuks</p>
-                <p class="text-gray-600 mb-2" data-lang="zh">250 件</p>
+                <h3 class="text-xl font-bold">Draagtas Middel</h3>
+                <p class="text-gray-600 mb-2">250 stuks</p>
                 <p class="text-blue-700 font-bold mb-4">€16.00</p>
                 
                 <div class="flex items-center mb-4">
@@ -113,26 +81,15 @@
                     <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product2', 1)">+</button>
                 </div>
                 
-                <button onclick="addToCart('Medium Carrier Bag', 16.00, 'product2-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="en">Add to Cart</button>
                 <button onclick="addToCart('Draagtas Middel', 16.00, 'product2-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="nl">In Winkelwagen</button>
-                <button onclick="addToCart('中型手提袋', 16.00, 'product2-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="zh">加入购物车</button>
+                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
             </div>
             
             <!-- PRODUCT 3 -->
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <img src="images/snackvork.png" alt="Snack forks" class="product-image mb-4">
-                <h3 class="text-xl font-bold" data-lang="en">Snack Fork</h3>
-                <h3 class="text-xl font-bold" data-lang="nl">Snackvork</h3>
-                <h3 class="text-xl font-bold" data-lang="zh">小吃叉</h3>
-                <p class="text-gray-600 mb-2" data-lang="en">1000 pieces</p>
-                <p class="text-gray-600 mb-2" data-lang="nl">1000 stuks</p>
-                <p class="text-gray-600 mb-2" data-lang="zh">1000 件</p>
+                <h3 class="text-xl font-bold">Snackvork</h3>
+                <p class="text-gray-600 mb-2">1000 stuks</p>
                 <p class="text-blue-700 font-bold mb-4">€22.50</p>
                 
                 <div class="flex items-center mb-4">
@@ -141,62 +98,41 @@
                     <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product3', 1)">+</button>
                 </div>
                 
-                <button onclick="addToCart('Snack Fork', 22.50, 'product3-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="en">Add to Cart</button>
                 <button onclick="addToCart('Snackvork', 22.50, 'product3-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="nl">In Winkelwagen</button>
-                <button onclick="addToCart('小吃叉', 22.50, 'product3-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" 
-                        data-lang="zh">加入购物车</button>
+                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
             </div>
         </div>
 
         <!-- Shopping Cart -->
         <div class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold mb-6" data-lang="en">Your Order</h2>
-            <h2 class="text-2xl font-bold mb-6" data-lang="nl">Uw Bestelling</h2>
-            <h2 class="text-2xl font-bold mb-6" data-lang="zh">您的订单</h2>
+            <h2 class="text-2xl font-bold mb-6">Uw Bestelling</h2>
             
             <div id="cart-items" class="mb-6">
-                <p class="text-gray-500 text-center py-8" data-lang="en">Your cart is empty</p>
-                <p class="text-gray-500 text-center py-8" data-lang="nl">Uw winkelwagen is leeg</p>
-                <p class="text-gray-500 text-center py-8" data-lang="zh">您的购物车是空的</p>
+                <p class="text-gray-500 text-center py-8">Uw winkelwagen is leeg</p>
             </div>
             
             <div id="cart-summary" class="border-t pt-4">
                 <div class="flex justify-between mb-2">
-                    <span data-lang="en">Subtotal:</span>
-                    <span data-lang="nl">Subtotaal:</span>
-                    <span data-lang="zh">小计:</span>
+                    <span>Subtotaal:</span>
                     <span id="subtotal">€0.00</span>
                 </div>
                 <div class="flex justify-between mb-2">
-                    <span data-lang="en">VAT (21%):</span>
-                    <span data-lang="nl">BTW (21%):</span>
-                    <span data-lang="zh">增值税 (21%):</span>
+                    <span>BTW (21%):</span>
                     <span id="vat">€0.00</span>
                 </div>
                 <div class="flex justify-between mb-2" id="delivery-row">
-                    <span data-lang="en">Delivery:</span>
-                    <span data-lang="nl">Bezorging:</span>
-                    <span data-lang="zh">配送:</span>
+                    <span>Bezorging:</span>
                     <span id="delivery">€0.00</span>
                 </div>
                 <div class="flex justify-between font-bold text-xl mt-4">
-                    <span data-lang="en">Total:</span>
-                    <span data-lang="nl">Totaal:</span>
-                    <span data-lang="zh">总计:</span>
+                    <span>Totaal:</span>
                     <span id="total">€0.00</span>
                 </div>
                 
                 <!-- Free Delivery Progress -->
                 <div id="delivery-progress" class="mt-4 hidden">
                     <div class="flex justify-between text-sm mb-1">
-                        <span data-lang="en">Free delivery at €350</span>
-                        <span data-lang="nl">Gratis bezorging vanaf €350</span>
-                        <span data-lang="zh">满350欧元免运费</span>
+                        <span>Gratis bezorging vanaf €350</span>
                         <span id="progress-amount">€0/€350</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2.5">
@@ -206,68 +142,47 @@
             </div>
             
             <button onclick="showCustomerForm()" 
-                    class="mt-6 w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700"
-                    data-lang="en">Proceed to Checkout</button>
-            <button onclick="showCustomerForm()" 
-                    class="mt-6 w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700"
-                    data-lang="nl">Naar Afrekenen</button>
-            <button onclick="showCustomerForm()" 
-                    class="mt-6 w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700"
-                    data-lang="zh">去结账</button>
+                    class="mt-6 w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700">Naar Afrekenen</button>
         </div>
 
         <!-- Customer Details Form -->
         <div id="customer-form" class="bg-white p-6 rounded-lg shadow-md mt-8">
-            <h2 class="text-2xl font-bold mb-6" data-lang="en">Customer Details</h2>
-            <h2 class="text-2xl font-bold mb-6" data-lang="nl">Klantgegevens</h2>
-            <h2 class="text-2xl font-bold mb-6" data-lang="zh">客户资料</h2>
+            <h2 class="text-2xl font-bold mb-6">Klantgegevens</h2>
             
             <form id="order-form" action="https://formsubmit.co/du.chin@hotmail.com" method="POST">
                 <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="New DuChin Order">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_autoresponse" value="Thank you for your order! We'll contact you shortly.">
-                <input type="hidden" name="_next" value="https://wenhao9.github.io/DuChin-Website/thank-you.html"> <!-- Replace with your thank you page -->
+                <input type="hidden" name="_next" value="https://wenhao9.github.io/DuChin-Website/thank-you.html">
                 <input type="hidden" name="_captcha" value="false">
                 
                 <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label for="name" class="block mb-2 font-medium" data-lang="en">Full Name*</label>
-                        <label for="name" class="block mb-2 font-medium" data-lang="nl">Volledige Naam*</label>
-                        <label for="name" class="block mb-2 font-medium" data-lang="zh">全名*</label>
+                        <label for="name" class="block mb-2 font-medium">Volledige Naam*</label>
                         <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg">
                     </div>
                     <div>
-                        <label for="email" class="block mb-2 font-medium" data-lang="en">Email*</label>
-                        <label for="email" class="block mb-2 font-medium" data-lang="nl">E-mail*</label>
-                        <label for="email" class="block mb-2 font-medium" data-lang="zh">电子邮件*</label>
+                        <label for="email" class="block mb-2 font-medium">E-mail*</label>
                         <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg">
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label for="phone" class="block mb-2 font-medium" data-lang="en">Phone Number*</label>
-                        <label for="phone" class="block mb-2 font-medium" data-lang="nl">Telefoonnummer*</label>
-                        <label for="phone" class="block mb-2 font-medium" data-lang="zh">电话号码*</label>
+                        <label for="phone" class="block mb-2 font-medium">Telefoonnummer*</label>
                         <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
                     </div>
                     <div>
-                        <label for="company" class="block mb-2 font-medium" data-lang="en">Company Name</label>
-                        <label for="company" class="block mb-2 font-medium" data-lang="nl">Bedrijfsnaam</label>
-                        <label for="company" class="block mb-2 font-medium" data-lang="zh">公司名称</label>
+                        <label for="company" class="block mb-2 font-medium">Bedrijfsnaam</label>
                         <input type="text" id="company" name="company" class="w-full px-4 py-2 border rounded-lg">
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label for="address" class="block mb-2 font-medium" data-lang="en">Shipping Address*</label>
-                    <label for="address" class="block mb-2 font-medium" data-lang="nl">Bezorgadres*</label>
-                    <label for="address" class="block mb-2 font-medium" data-lang="zh">送货地址*</label>
+                    <label for="address" class="block mb-2 font-medium">Bezorgadres*</label>
                     <textarea id="address" name="address" rows="3" required class="w-full px-4 py-2 border rounded-lg"></textarea>
                 </div>
                 <div class="mb-4">
-                    <label for="notes" class="block mb-2 font-medium" data-lang="en">Order Notes</label>
-                    <label for="notes" class="block mb-2 font-medium" data-lang="nl">Opmerkingen</label>
-                    <label for="notes" class="block mb-2 font-medium" data-lang="zh">订单备注</label>
+                    <label for="notes" class="block mb-2 font-medium">Opmerkingen</label>
                     <textarea id="notes" name="notes" rows="2" class="w-full px-4 py-2 border rounded-lg"></textarea>
                 </div>
                 
@@ -280,24 +195,9 @@
                 
                 <div class="flex justify-between">
                     <button type="button" onclick="hideCustomerForm()" 
-                            class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100"
-                            data-lang="en">Back to Cart</button>
-                    <button type="button" onclick="hideCustomerForm()" 
-                            class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100"
-                            data-lang="nl">Terug naar Winkelwagen</button>
-                    <button type="button" onclick="hideCustomerForm()" 
-                            class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100"
-                            data-lang="zh">返回购物车</button>
-                            
+                            class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Terug naar Winkelwagen</button>
                     <button type="submit" onclick="prepareFormSubmit()" 
-                            class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700"
-                            data-lang="en">Complete Order</button>
-                    <button type="submit" onclick="prepareFormSubmit()" 
-                            class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700"
-                            data-lang="nl">Bestelling Voltooien</button>
-                    <button type="submit" onclick="prepareFormSubmit()" 
-                            class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700"
-                            data-lang="zh">完成订单</button>
+                            class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700">Bestelling Voltooien</button>
                 </div>
             </form>
         </div>
@@ -305,24 +205,9 @@
 
     <script>
         let cart = [];
-        let currentLanguage = 'en';
         const DELIVERY_COST = 12.95;
         const VAT_RATE = 0.21;
         const FREE_DELIVERY_THRESHOLD = 350;
-        
-        function changeLanguage(lang) {
-            currentLanguage = lang;
-            // Hide all language elements
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = 'none';
-            });
-            // Show elements for selected language
-            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
-                el.style.display = 'block';
-            });
-            // Update cart display with current language
-            updateCartDisplay();
-        }
         
         function updateQuantity(productId, change) {
             const input = document.getElementById(`${productId}-qty`);
@@ -365,11 +250,7 @@
             const progressBar = document.getElementById('progress-bar');
             
             if (cart.length === 0) {
-                cartItemsElement.innerHTML = `
-                    <p class="text-gray-500 text-center py-8" data-lang="en">Your cart is empty</p>
-                    <p class="text-gray-500 text-center py-8" data-lang="nl">Uw winkelwagen is leeg</p>
-                    <p class="text-gray-500 text-center py-8" data-lang="zh">您的购物车是空的</p>
-                `;
+                cartItemsElement.innerHTML = `<p class="text-gray-500 text-center py-8">Uw winkelwagen is leeg</p>`;
                 subtotalElement.textContent = '€0.00';
                 vatElement.textContent = '€0.00';
                 deliveryElement.textContent = '€0.00';
@@ -417,9 +298,7 @@
             vatElement.textContent = `€${vat.toFixed(2)}`;
             
             if (subtotal >= FREE_DELIVERY_THRESHOLD) {
-                deliveryElement.innerHTML = currentLanguage === 'en' ? '<span class="text-green-600">FREE</span>' : 
-                                          currentLanguage === 'nl' ? '<span class="text-green-600">GRATIS</span>' : 
-                                          '<span class="text-green-600">免费</span>';
+                deliveryElement.innerHTML = '<span class="text-green-600">GRATIS</span>';
                 deliveryProgress.classList.add('hidden');
             } else {
                 deliveryElement.textContent = `€${delivery.toFixed(2)}`;
@@ -436,9 +315,7 @@
         
         function showCustomerForm() {
             if (cart.length === 0) {
-                if (currentLanguage === 'en') alert('Your cart is empty. Please add some products first.');
-                if (currentLanguage === 'nl') alert('Uw winkelwagen is leeg. Voeg eerst producten toe.');
-                if (currentLanguage === 'zh') alert('您的购物车是空的。请先添加一些产品。');
+                alert('Uw winkelwagen is leeg. Voeg eerst producten toe.');
                 return;
             }
             document.getElementById('customer-form').style.display = 'block';
@@ -463,9 +340,7 @@
             const subtotal = document.getElementById('subtotal').textContent.replace('€', '');
             const vat = document.getElementById('vat').textContent.replace('€', '');
             const deliveryText = document.getElementById('delivery').textContent;
-            const delivery = deliveryText.includes('FREE') || deliveryText.includes('GRATIS') || deliveryText.includes('免费') 
-                           ? 'FREE' 
-                           : deliveryText;
+            const delivery = deliveryText.includes('GRATIS') ? 'FREE' : deliveryText;
             const total = document.getElementById('total').textContent.replace('€', '');
             
             // Set hidden field values
@@ -478,9 +353,6 @@
             // Form will submit normally via FormSubmit
             return true;
         }
-
-        // Initialize with English language
-        changeLanguage('en');
     </script>
 </body>
 </html>
