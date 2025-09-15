@@ -331,32 +331,39 @@
         function hideCustomerForm() {
             document.getElementById('customer-form').style.display = 'none';
         }
-        
         function prepareFormSubmit() {
-            // Prepare cart data for submission
-            let cartData = "=== ORDER DETAILS ===\n";
-            cart.forEach(item => {
-                cartData += `${item.quantity} × ${item.name} - €${item.price.toFixed(2)}\n`;
-            });
-            
-            // Get order summary values
-            const subtotal = document.getElementById('subtotal').textContent.replace('€', '');
-            const vat = document.getElementById('vat').textContent.replace('€', '');
-            const deliveryText = document.getElementById('delivery').textContent;
-            const delivery = deliveryText.includes('GRATIS') ? 'FREE' : deliveryText;
-            const total = document.getElementById('total').textContent.replace('€', '');
-            
-            // Set hidden field values
-            document.getElementById('cart-data').value = cartData;
-            document.getElementById('order-subtotal').value = subtotal;
-            document.getElementById('order-vat').value = vat;
-            document.getElementById('order-delivery').value = delivery;
-            document.getElementById('order-total').value = total;
-            
-            // Form will submit normally via FormSubmit
-            return true;
-        }
+    // Prepare cart data for submission - CSV format
+    let cartData = "SKU,Quantity\n";
+    cart.forEach(item => {
+        cartData += `${item.sku},${item.quantity}\n`;
+    });
+    
+    // Also include readable format for email body
+    let readableCartData = "=== ORDER DETAILS ===\n";
+    cart.forEach(item => {
+        readableCartData += `${item.quantity} × ${item.name} (${item.sku}) - €${item.price.toFixed(2)}\n`;
+    });
+    
+    // Get order summary values
+    const subtotal = document.getElementById('subtotal').textContent.replace('€', '');
+    const vat = document.getElementById('vat').textContent.replace('€', '');
+    const deliveryText = document.getElementById('delivery').textContent;
+    const delivery = deliveryText.includes('GRATIS') ? 'FREE' : deliveryText;
+    const total = document.getElementById('total').textContent.replace('€', '');
+    
+    // Set hidden field values
+    document.getElementById('cart-data').value = readableCartData;
+    document.getElementById('order-subtotal').value = subtotal;
+    document.getElementById('order-vat').value = vat;
+    document.getElementById('order-delivery').value = delivery;
+    document.getElementById('order-total').value = total;
+    
+    // Form will submit normally via FormSubmit
+    return true;
+}
+        
     </script>
 </body>
 </html>
+
 
