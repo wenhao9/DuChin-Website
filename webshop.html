@@ -147,124 +147,86 @@
                     class="mt-6 w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700">Naar Afrekenen</button>
         </div>
 
-        <!-- Customer Details Form -->
-        <div id="customer-form" class="bg-white p-6 rounded-lg shadow-md mt-8">
-            <h2 class="text-2xl font-bold mb-6">Klantgegevens</h2>
-            
-            <form id="order-form" action="https://formsubmit.co/du.chin@hotmail.com" method="POST">
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_subject" value="New DuChin Order">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_autoresponse" value="Thank you for your order! We'll contact you shortly.">
-                <input type="hidden" name="_next" value="https://wenhao9.github.io/DuChin-Website/thank-you.html">
-                <input type="hidden" name="_captcha" value="false">
-                
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                        <label for="name" class="block mb-2 font-medium">Volledige Naam*</label>
-                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg">
-                    </div>
-                    <div>
-                        <label for="email" class="block mb-2 font-medium">E-mail*</label>
-                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg">
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                        <label for="phone" class="block mb-2 font-medium">Telefoonnummer*</label>
-                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
-                    </div>
-                    <div>
-                        <label for="company" class="block mb-2 font-medium">Bedrijfsnaam</label>
-                        <input type="text" id="company" name="company" class="w-full px-4 py-2 border rounded-lg">
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label for="address" class="block mb-2 font-medium">Bezorgadres*</label>
-                    <textarea id="address" name="address" rows="3" required class="w-full px-4 py-2 border rounded-lg"></textarea>
-                </div>
-                <div class="mb-4">
-                    <label for="notes" class="block mb-2 font-medium">Opmerkingen</label>
-                    <textarea id="notes" name="notes" rows="2" class="w-full px-4 py-2 border rounded-lg"></textarea>
-                </div>
-                <div class="mb-4">
-    <div class="flex items-center mb-2">
-        <input type="checkbox" id="returning-customer" onchange="toggleReturningCustomer()" class="mr-2">
-        <label for="returning-customer" class="font-medium">Ik ben een terugkerende klant</label>
-    </div>
-</div>
+<!-- Customer Details Form -->
+<div id="customer-form" class="bg-white p-6 rounded-lg shadow-md mt-8">
+    <h2 class="text-2xl font-bold mb-6">Klantgegevens</h2>
+    
+    <form id="order-form" action="https://formsubmit.co/du.chin@hotmail.com" method="POST">
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_subject" value="New DuChin Order">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you for your order! We'll contact you shortly.">
+        <input type="hidden" name="_next" value="https://wenhao9.github.io/DuChin-Website/thank-you.html">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <div class="mb-4">
+            <div class="flex items-center mb-2">
+                <input type="checkbox" id="returning-customer" onchange="toggleReturningCustomer()" class="mr-2">
+                <label for="returning-customer" class="font-medium">Ik ben een terugkerende klant</label>
+            </div>
+        </div>
 
-<div id="returning-customer-fields" class="hidden mb-4">
-    <div class="grid md:grid-cols-2 gap-4">
-        <div>
-            <label for="customer-number" class="block mb-2 font-medium">Klantnummer*</label>
-            <input type="text" id="customer-number" name="customer_number" class="w-full px-4 py-2 border rounded-lg">
-        </div>
-        <div>
-            <label for="returning-email" class="block mb-2 font-medium">E-mail*</label>
-            <input type="email" id="returning-email" name="returning_email" class="w-full px-4 py-2 border rounded-lg">
-        </div>
-    </div>
-</div>
-
-<div id="regular-customer-fields">
-    <div class="grid md:grid-cols-2 gap-4 mb-4">
-        <div>
-            <label for="name" class="block mb-2 font-medium">Volledige Naam*</label>
-            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg">
-        </div>
-        <div>
-            <label for="email" class="block mb-2 font-medium">E-mail*</label>
-            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg">
-        </div>
-    </div>
-    <div class="grid md:grid-cols-2 gap-4 mb-4">
-        <div>
-            <label for="phone" class="block mb-2 font-medium">Telefoonnummer*</label>
-            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
-        </div>
-        <div>
-            <label for="company" class="block mb-2 font-medium">Bedrijfsnaam</label>
-            <input type="text" id="company" name="company" class="w-full px-4 py-2 border rounded-lg">
-        </div>
-    </div>
-    <div class="mb-4">
-        <label for="address" class="block mb-2 font-medium">Bezorgadres*</label>
-        <textarea id="address" name="address" rows="3" required class="w-full px-4 py-2 border rounded-lg"></textarea>
-    </div>
-    <div class="mb-4">
-        <label for="notes" class="block mb-2 font-medium">Opmerkingen</label>
-        <textarea id="notes" name="notes" rows="2" class="w-full px-4 py-2 border rounded-lg"></textarea>
-    </div>
-</div>
-                <div id="returning-customer-fields" class="hidden mb-4">
-    <div class="grid md:grid-cols-2 gap-4">
-        <div>
-            <label for="customer-number" class="block mb-2 font-medium">Klantnummer*</label>
-            <input type="text" id="customer-number" name="customer_number" class="w-full px-4 py-2 border rounded-lg">
-        </div>
-        <div>
-            <label for="returning-email" class="block mb-2 font-medium">E-mail*</label>
-            <input type="email" id="returning-email" name="returning_email" class="w-full px-4 py-2 border rounded-lg">
-        </div>
-    </div>
-</div>
-                <!-- Hidden fields for cart data -->
-                <input type="hidden" id="cart-data" name="cart_data">
-                <input type="hidden" id="order-subtotal" name="order_subtotal">
-                <input type="hidden" id="order-vat" name="order_vat">
-                <input type="hidden" id="order-delivery" name="order_delivery">
-                <input type="hidden" id="order-total" name="order_total">
-                
-                <div class="flex justify-between">
-                    <button type="button" onclick="hideCustomerForm()" 
-                            class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Terug naar Winkelwagen</button>
-                    <button type="submit" onclick="prepareFormSubmit()" 
-                            class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700">Bestelling Voltooien</button>
+        <!-- Regular Customer Fields -->
+        <div id="regular-customer-fields">
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="name" class="block mb-2 font-medium">Volledige Naam*</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg">
                 </div>
-            </form>
+                <div>
+                    <label for="email" class="block mb-2 font-medium">E-mail*</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="phone" class="block mb-2 font-medium">Telefoonnummer*</label>
+                    <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label for="company" class="block mb-2 font-medium">Bedrijfsnaam</label>
+                    <input type="text" id="company" name="company" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="address" class="block mb-2 font-medium">Bezorgadres*</label>
+                <textarea id="address" name="address" rows="3" required class="w-full px-4 py-2 border rounded-lg"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="notes" class="block mb-2 font-medium">Opmerkingen</label>
+                <textarea id="notes" name="notes" rows="2" class="w-full px-4 py-2 border rounded-lg"></textarea>
+            </div>
         </div>
-    </main>
+
+        <!-- Returning Customer Fields -->
+        <div id="returning-customer-fields" class="hidden mb-4">
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label for="customer-number" class="block mb-2 font-medium">Klantnummer*</label>
+                    <input type="text" id="customer-number" name="customer_number" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label for="returning-email" class="block mb-2 font-medium">E-mail*</label>
+                    <input type="email" id="returning-email" name="returning_email" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hidden fields for cart data -->
+        <input type="hidden" id="cart-data" name="cart_data">
+        <input type="hidden" id="order-subtotal" name="order_subtotal">
+        <input type="hidden" id="order-vat" name="order_vat">
+        <input type="hidden" id="order-delivery" name="order_delivery">
+        <input type="hidden" id="order-total" name="order_total">
+        
+        <div class="flex justify-between">
+            <button type="button" onclick="hideCustomerForm()" 
+                    class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Terug naar Winkelwagen</button>
+            <button type="submit" onclick="prepareFormSubmit()" 
+                    class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700">Bestelling Voltooien</button>
+        </div>
+    </form>
+</div>
 
     <script>
         let cart = [];
@@ -458,6 +420,7 @@ function toggleReturningCustomer() {
     </script>
 </body>
 </html>
+
 
 
 
