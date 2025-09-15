@@ -27,6 +27,9 @@
             padding: 8px 12px;
             margin-bottom: 16px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -52,56 +55,55 @@
         <!-- Product Grid -->
         <div class="grid md:grid-cols-3 gap-8 mb-12">
             <!-- PRODUCT 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <img src="images/a16 kraft.png" alt="A16 Kraft" class="product-image mb-4">
-                <h3 class="text-xl font-bold">A16 Kraft</h3>
-                <p class="text-gray-600 mb-2">400 stuks</p>
-                <p class="text-blue-700 font-bold mb-4">€12.00</p>
-                
-                <div class="flex items-center mb-4">
-                    <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product1', -1)">-</button>
-                    <input id="product1-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
-                    <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product1', 1)">+</button>
-                </div>
-                
-                <button onclick="addToCart('A16 Kraft', 12.00, 'product1-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
-            </div>
-            
-            <!-- PRODUCT 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <img src="images/draagtas middel.png" alt="Draagtas middelgroot" class="product-image mb-4">
-                <h3 class="text-xl font-bold">Draagtas Middel</h3>
-                <p class="text-gray-600 mb-2">250 stuks</p>
-                <p class="text-blue-700 font-bold mb-4">€16.00</p>
-                
-                <div class="flex items-center mb-4">
-                    <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product2', -1)">-</button>
-                    <input id="product2-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
-                    <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product2', 1)">+</button>
-                </div>
-                
-                <button onclick="addToCart('Draagtas Middel', 16.00, 'product2-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
-            </div>
-            
-            <!-- PRODUCT 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <img src="images/snackvork.png" alt="Snack forks" class="product-image mb-4">
-                <h3 class="text-xl font-bold">Snackvork</h3>
-                <p class="text-gray-600 mb-2">1000 stuks</p>
-                <p class="text-blue-700 font-bold mb-4">€22.50</p>
-                
-                <div class="flex items-center mb-4">
-                    <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product3', -1)">-</button>
-                    <input id="product3-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
-                    <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product3', 1)">+</button>
-                </div>
-                
-                <button onclick="addToCart('Snackvork', 22.50, 'product3-qty')" 
-                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
-            </div>
-        </div>
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="images/a16 kraft.png" alt="A16 Kraft" class="product-image mb-4">
+    <h3 class="text-xl font-bold">A16 Kraft</h3>
+    <p class="text-gray-600 mb-2">400 stuks</p>
+    <p class="text-blue-700 font-bold mb-4">€12.00</p>
+    
+    <div class="flex items-center mb-4">
+        <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product1', -1)">-</button>
+        <input id="product1-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
+        <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product1', 1)">+</button>
+    </div>
+    
+    <button onclick="addToCart('A16 Kraft', 12.00, 'product1-qty', 'A16-KRAFT')" 
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="images/draagtas middel.png" alt="Draagtas middelgroot" class="product-image mb-4">
+    <h3 class="text-xl font-bold">Draagtas Middel</h3>
+    <p class="text-gray-600 mb-2">250 stuks</p>
+    <p class="text-blue-700 font-bold mb-4">€16.00</p>
+    
+    <div class="flex items-center mb-4">
+        <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product2', -1)">-</button>
+        <input id="product2-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
+        <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product2', 1)">+</button>
+    </div>
+    
+    <button onclick="addToCart('Draagtas Middel', 16.00, 'product2-qty', 'DRAGGTAS-MID')" 
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="images/snackvork.png" alt="Snack forks" class="product-image mb-4">
+    <h3 class="text-xl font-bold">Snackvork</h3>
+    <p class="text-gray-600 mb-2">1000 stuks</p>
+    <p class="text-blue-700 font-bold mb-4">€22.50</p>
+    
+    <div class="flex items-center mb-4">
+        <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product3', -1)">-</button>
+        <input id="product3-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
+        <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product3', 1)">+</button>
+    </div>
+    
+    <button onclick="addToCart('Snackvork', 22.50, 'product3-qty', 'SNACKVORK-1K')" 
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
+</div>
 
         <!-- Shopping Cart -->
         <div class="bg-white p-6 rounded-lg shadow-md">
@@ -216,23 +218,24 @@
             input.value = newValue;
         }
         
-        function addToCart(name, price, quantityId) {
+        function addToCart(name, price, quantityId, sku) {
             const quantity = parseInt(document.getElementById(quantityId).value);
             const existingItem = cart.find(item => item.name === name);
-            
+    
             if (existingItem) {
                 existingItem.quantity += quantity;
             } else {
                 cart.push({
                     name: name,
                     price: price,
-                    quantity: quantity
-                });
-            }
-            
-            updateCartDisplay();
-            document.getElementById(quantityId).value = 1;
-        }
+                    quantity: quantity,
+                    sku: sku
+            });
+    }
+    
+    updateCartDisplay();
+    document.getElementById(quantityId).value = 1;
+}
         
         function removeFromCart(index) {
             cart.splice(index, 1);
@@ -356,3 +359,4 @@
     </script>
 </body>
 </html>
+
