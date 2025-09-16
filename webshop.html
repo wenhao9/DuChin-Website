@@ -71,6 +71,57 @@
     <button onclick="addToCart('7. Draagtas klein kraft BIO (22x10x28cm)', 14.50, 'product4-qty', '9987499')" 
             class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
 </div>
+
+            <!-- PRODUCT 6 -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="images/draagtas_middel_bio.png" alt="Draagtas middel kraft BIO" class="product-image mb-4">
+    <h3 class="text-xl font-bold">8. Draagtas middel kraft BIO (26x17x27cm)</h3>
+    <p class="text-gray-600 mb-2">250 stuks</p>
+    <p class="text-blue-700 font-bold mb-4">€17.50</p>
+    
+    <div class="flex items-center mb-4">
+        <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product6', -1)">-</button>
+        <input id="product6-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
+        <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product6', 1)">+</button>
+    </div>
+    
+    <button onclick="addToCart('8. Draagtas middel kraft BIO (26x17x27cm)', 17.50, 'product6-qty', '9987497')" 
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
+</div>
+            
+<!-- PRODUCT 2 -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="images/draagtas middel.png" alt="Draagtas middelgroot" class="product-image mb-4">
+    <h3 class="text-xl font-bold">2. Draagtas Middel RECYCLED (26x17x27cm) </h3>
+    <p class="text-gray-600 mb-2">250 stuks</p>
+    <p class="text-blue-700 font-bold mb-4">€16.00</p>
+    
+    <div class="flex items-center mb-4">
+        <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product2', -1)">-</button>
+        <input id="product2-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
+        <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product2', 1)">+</button>
+    </div>
+    
+    <button onclick="addToCart('2. Draagtas Middel RECYCLED (26x17x27cm)', 16.00, 'product2-qty', '9987497')" 
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
+</div>
+            
+           <!-- PRODUCT 5 -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="images/draagtas_groot_recycled.png" alt="Draagtas groot RECYCLED" class="product-image mb-4">
+    <h3 class="text-xl font-bold">3. Draagtas groot RECYCLED (32x16x27cm)</h3>
+    <p class="text-gray-600 mb-2">250 stuks</p>
+    <p class="text-blue-700 font-bold mb-4">€17.00</p>
+    
+    <div class="flex items-center mb-4">
+        <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product5', -1)">-</button>
+        <input id="product5-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
+        <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product5', 1)">+</button>
+    </div>
+    
+    <button onclick="addToCart('Draagtas groot RECYCLED (32x16x27cm)', 17.00, 'product5-qty', '9988114')" 
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
+</div>
             
             <!-- PRODUCT 1 -->
 <div class="bg-white p-6 rounded-lg shadow-md">
@@ -89,22 +140,7 @@
             class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
 </div>
 
-<!-- PRODUCT 2 -->
-<div class="bg-white p-6 rounded-lg shadow-md">
-    <img src="images/draagtas middel.png" alt="Draagtas middelgroot" class="product-image mb-4">
-    <h3 class="text-xl font-bold">Draagtas Middel</h3>
-    <p class="text-gray-600 mb-2">250 stuks</p>
-    <p class="text-blue-700 font-bold mb-4">€16.00</p>
-    
-    <div class="flex items-center mb-4">
-        <button class="bg-gray-200 px-3 py-1 rounded-l" onclick="updateQuantity('product2', -1)">-</button>
-        <input id="product2-qty" type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200">
-        <button class="bg-gray-200 px-3 py-1 rounded-r" onclick="updateQuantity('product2', 1)">+</button>
-    </div>
-    
-    <button onclick="addToCart('Draagtas Middel', 16.00, 'product2-qty', '9987497')" 
-            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">In Winkelwagen</button>
-</div>
+
 
 <!-- PRODUCT 3 -->
 <div class="bg-white p-6 rounded-lg shadow-md">
@@ -473,6 +509,7 @@ function toggleReturningCustomer() {
     </script>
 </body>
 </html>
+
 
 
 
